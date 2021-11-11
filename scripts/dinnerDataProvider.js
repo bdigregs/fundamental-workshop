@@ -29,3 +29,16 @@ export const deleteGuest = entryId => {
     })
     .then(getEntries)
 }
+
+export const updateEntry = entry => {
+
+    return fetch(`http://localhost:8088/entries/${entry.id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(entry)
+    })
+
+}
+
